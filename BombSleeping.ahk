@@ -5,7 +5,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #Persistent
 #SingleInstance, force
 ;test git
-
+password =
 FileRead, password, %A_ScriptDir%\password.txt
 X := 478
 Y := 217
@@ -136,7 +136,7 @@ Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
 PASSWORD1:
 ToolTip, METAMASK PASSWORD, X, Y
-Send, password
+Send, %password%
 Sleep, 6000
 Send, {Enter}
 Sleep, 6000
