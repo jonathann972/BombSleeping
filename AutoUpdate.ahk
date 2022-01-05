@@ -3,12 +3,12 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-myzip := A_ScriptDir "\Update.zip"				; 
-unzipfolder := A_ScriptDir "\update"				; 
+myzip := A_ScriptDir "\Update.zip"				 
+unzipfolder := A_ScriptDir "\update"				 
 url = https://github.com/jonathann972/BombSleeping/archive/refs/heads/main.zip
 Filename = Update.zip
 
-FileReadLine, VNum, %A_WorkingDir%\version.txt, 1 ;looks for local version text and stores as vnum
+FileReadLine, VNum, %A_WorkingDir%\version.txt, 1 
 	if ErrorLevel = 1
 	Vnum = 0
 whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
