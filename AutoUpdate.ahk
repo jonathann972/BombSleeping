@@ -17,8 +17,9 @@ whr.Send()
 
 whr.WaitForResponse() 
 version := whr.ResponseText
-MsgBox, 1, Press OK to download, Version actuelle : %Vnum%. Derniere version : %version%.
-	IfMsgBox OK
+MsgBox, 4, Press Yes to download, Version actuelle : %Vnum%. Derniere version : %version%.
+	IfMsgBox Yes
+	{
 		UrlDownloadToFile, *0 %url%, %A_WorkingDir%\%Filename%
 		if ErrorLevel = 1
 			MsgBox, There was some error updating the file. You may have the latest version, or it is blocked.
@@ -26,6 +27,11 @@ MsgBox, 1, Press OK to download, Version actuelle : %Vnum%. Derniere version : %
 			MsgBox, Mise à jour Effectué. 
 		else 
 			MsgBox, some other crazy error occured. 
+	}
+	IfMsgBox No	
+	{
+		Exit
+	}	
 Unz(myzip, unzipfolder)
 
 
