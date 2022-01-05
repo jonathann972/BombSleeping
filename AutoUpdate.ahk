@@ -17,13 +17,13 @@ whr.Send()
 
 whr.WaitForResponse() 
 version := whr.ResponseText
-MsgBox, 1, Press OK to download, Your current version is %Vnum%. This latest is %version%.
+MsgBox, 1, Press OK to download, Version actuelle : %Vnum%. Derniere version : %version%.
 	IfMsgBox OK
 		UrlDownloadToFile, *0 %url%, %A_WorkingDir%\%Filename%
 		if ErrorLevel = 1
 			MsgBox, There was some error updating the file. You may have the latest version, or it is blocked.
 		else if ErrorLevel = 0
-			MsgBox, The update/ download appears to have been successful or you clicked cancel. Please check the update folder. 
+			MsgBox, Mise à jour Effectué. 
 		else 
 			MsgBox, some other crazy error occured. 
 Unz(myzip, unzipfolder)
@@ -45,4 +45,4 @@ FileMove, %A_ScriptDir%\update\BombSleeping-main\*.*, %A_ScriptDir%, 1
 FileRemoveDir, update, 1
 FileDelete, *.zip
 SLeep, 1500
-MsgBox, You can run the script properly (UP TO DATE)
+MsgBox, Script mis à jour !
