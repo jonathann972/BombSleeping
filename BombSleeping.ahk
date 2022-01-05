@@ -30,7 +30,7 @@ Click, 955,621
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\AFK.PNG
 if ErrorLevel = 0
 {
-Goto, ACCOUNT2
+Goto, REBOOT
 }
 ;CONNECT WALLET
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\connect-wallet.PNG
@@ -68,6 +68,12 @@ if ErrorLevel = 0
 {
 Goto, SOCKETERROR1
 }
+;Send all hero
+ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\ALL.PNG
+if ErrorLevel = 0
+{
+Goto, ALL
+}
 ;wrong network
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\wrongnetwork.PNG
 if ErrorLevel = 0
@@ -93,6 +99,15 @@ Goto, LOOP1
 }
 }
 ;;;;;;;;;;;;;;;;;;;;
+ALL:
+ToolTip, ALL, X, Y
+Click, 871, 290
+Sleep, 2000
+Click, 1010, 243
+Sleep, 1500
+Click, 954, 429
+Goto, LOOP1
+;;;;;;;;;;;;;;;;;;;;
 CONNECT1:
 ToolTip, Connect Wallet, X, Y
 Click, 954,611 ;connect wallet
@@ -102,52 +117,43 @@ Goto, METAMASKSIGNER1
 HEROICON1:
 ToolTip, Hero work, X, Y
 Click, 1365,665
-Sleep, 6000
-Click, 870, 292
-Sleep, 500
-Click, 1010, 242
-Sleep, 1000
-Click, 963, 444
+Sleep, 1500
 Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
 1008ERROR1:
 ToolTip, 1008 ERROR, X, Y
 Send, ^{F5}
-Sleep, 6000
+Sleep, 1500
 Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
 CONNECTIONERROR1:
 ToolTip, CONNECTION ERROR, X, Y
 Send, ^{F5}
-Sleep, 6000
+Sleep, 1500
 Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
 WRONG1:
 ToolTip, WRONG ERROR, X, Y
 Send, ^{F5}
-Sleep, 6000
+Sleep, 1500
 Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
 SOCKETERROR1:
 ToolTip, SOCKET ERROR, X, Y
 Send, ^{F5}
-Sleep, 6000
+Sleep, 1500
 Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
 PASSWORD1:
 ToolTip, METAMASK PASSWORD, X, Y
 Send, %password%
-Sleep, 6000
+Sleep, 2000
 Send, {Enter}
-Sleep, 6000
-Click, 326,40
-Sleep, 6000
-Click, 167,144
-Sleep, 6000
+Sleep, 1500
 Send, {ESC}
-Sleep, 6000
+Sleep, 1500
 Send, ^{F5}
-Sleep, 6000
+Sleep, 2500
 Goto, LOOP1
 
 ;;;;;;;;;;;;;;;;;;;;
