@@ -6,7 +6,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #SingleInstance, force
 ;test git
 
-
+FileRead, password, %A_ScriptDir%\password.txt
 X := 478
 Y := 217
 Dodo := 5000
@@ -136,7 +136,7 @@ Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
 PASSWORD1:
 ToolTip, METAMASK PASSWORD, X, Y
-Send, Metavamp972
+Send, password
 Sleep, 6000
 Send, {Enter}
 Sleep, 6000
