@@ -68,6 +68,12 @@ if ErrorLevel = 0
 {
 Goto, SOCKETERROR1
 }
+;10Min
+ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\10min.PNG
+if ErrorLevel = 0
+{
+Goto, 10MIN
+}
 ;Send all hero
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\ALL.PNG
 if ErrorLevel = 0
@@ -106,6 +112,12 @@ Sleep, 2000
 Click, 1010, 243
 Sleep, 1500
 Click, 954, 429
+Goto, LOOP1
+;;;;;;;;;;;;;;;;;;;;
+10MIN:
+ToolTip, ERROR 10MIN, X, Y
+Send, ^{F5}
+Sleep, 1500
 Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
 CONNECT1:
