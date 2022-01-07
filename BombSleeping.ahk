@@ -112,7 +112,7 @@ Goto, LOOP1
 CONNECT1:
 ToolTip, Connect Wallet, X, Y
 Click, 954,611 ;connect wallet
-Sleep, 5000
+Sleep, 10000
 Click, 253,556
 Sleep, 4000
 Goto, LOOP1
