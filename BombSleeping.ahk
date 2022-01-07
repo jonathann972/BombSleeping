@@ -92,18 +92,7 @@ Goto, PASSWORD1
 
 
 
-;;;;;;;;;;;;;;;;;;;;
-METAMASKSIGNER1:
-Loop, 
-{
-ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\signer.PNG
-if ErrorLevel = 0
-{
-Click, 253,556
-Sleep, 6000
-Goto, LOOP1
-}
-}
+
 ;;;;;;;;;;;;;;;;;;;;
 ALL:
 ToolTip, ALL, X, Y
@@ -124,7 +113,9 @@ CONNECT1:
 ToolTip, Connect Wallet, X, Y
 Click, 954,611 ;connect wallet
 Sleep, 5000
-Goto, METAMASKSIGNER1
+Click, 253,556
+Sleep, 4000
+Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
 HEROICON1:
 ToolTip, Hero work, X, Y
