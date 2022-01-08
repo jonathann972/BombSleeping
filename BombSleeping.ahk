@@ -98,7 +98,11 @@ ALL:
 ToolTip, ALL, X, Y
 Click, 871, 290
 Sleep, 2000
+Click, 870,321
+Sleep, 2000
 Click, 1010, 243
+Sleep, 1500
+Click, 1016, 275
 Sleep, 1500
 Click, 954, 429
 Goto, LOOP1
@@ -121,7 +125,7 @@ HEROICON1:
 ToolTip, Hero work, X, Y
 Click, 1365,665
 Sleep, 3000
-Click, 870,321
+
 Sleep, 1500
 Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
