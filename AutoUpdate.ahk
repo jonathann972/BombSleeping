@@ -48,7 +48,7 @@ Return
 
 MOVE:
 FileMove, %A_ScriptDir%\update\BombSleeping-main\*.*, %A_ScriptDir%, 1
-FileMoveDir, %A_ScriptDir%\update\BombSleeping-main\images\, %A_ScriptDir%, 1
+FileMoveDir, %A_ScriptDir%\update\BombSleeping-main\images, %A_ScriptDir%, 1
 FileRemoveDir, update, 1
 FileDelete, *.zip
 SLeep, 1500
