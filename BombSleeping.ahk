@@ -16,6 +16,7 @@ Loop
 
 Run, https://app.bombcrypto.io
 Sleep, 1000
+WinActivate, Bombcrypto chrome.exe
 LOOP1:
 Loop
 {
