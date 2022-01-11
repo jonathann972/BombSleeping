@@ -45,6 +45,12 @@ if ErrorLevel = 0
 {
 Goto, 1008ERROR1
 }
+;DATA CONFLICT
+ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\dataconflict.PNG
+if ErrorLevel = 0
+{
+Goto, DATACONFLICT
+}
 ;CONNECTION ERROR
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\connectionerror.PNG
 if ErrorLevel = 0
@@ -80,6 +86,12 @@ ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptD
 if ErrorLevel = 0
 {
 Goto, ALL
+}
+;KICK
+ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\KICK.PNG
+if ErrorLevel = 0
+{
+Goto, KICK
 }
 ;wrong network
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\wrongnetwork.PNG
@@ -136,6 +148,18 @@ Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
 CONNECTIONERROR1:
 ToolTip, CONNECTION ERROR, X, Y
+Send, ^{F5}
+Sleep, 1500
+Goto, LOOP1
+;;;;;;;;;;;;;;;;;;;;
+DATACONFLICT:
+ToolTip, DATA CONFLICT, X, Y
+Send, ^{F5}
+Sleep, 1500
+Goto, LOOP1
+;;;;;;;;;;;;;;;;;;;;
+KICK:
+ToolTip, KICK, X, Y
 Send, ^{F5}
 Sleep, 1500
 Goto, LOOP1
