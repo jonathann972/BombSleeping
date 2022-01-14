@@ -17,6 +17,8 @@ Loop
 Run, https://app.bombcrypto.io
 Sleep, 1000
 WinActivate, Bombcrypto ahk_exe chrome.exe
+TIMER:
+SetTimer, VERIF, 180000
 LOOP1:
 Loop
 {
@@ -105,7 +107,26 @@ Goto, PASSWORD1
 
 
 
-
+;;;;;;;;;;;;;;;;;;;;
+VERIF:
+Click, 958, 707
+Sleep, 1000
+Click, 958, 707
+Sleep, 2000 
+ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\allorange.PNG
+if ErrorLevel = 0
+{
+Click, 1023,253
+Sleep, 1000
+Click, 979, 455
+SetTimer, VERIF, On
+return
+}
+Else
+{
+SetTimer, VERIF, Off
+Goto, REBOOT
+}
 ;;;;;;;;;;;;;;;;;;;;
 ALL:
 ToolTip, ALL, X, Y
