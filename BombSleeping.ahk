@@ -30,6 +30,8 @@ Click, 955,621
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\AFK.PNG
 if ErrorLevel = 0
 {
+SetTimer, VERIF, Off
+SetTimer, VERIF, Delete
 Goto, REBOOT
 }
 ;CONNECT WALLET
