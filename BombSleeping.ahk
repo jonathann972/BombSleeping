@@ -10,7 +10,7 @@ password =
 FileRead, password, %A_ScriptDir%\password.txt
 X := 478
 Y := 217
-Dodo := 1
+Dodo := 5000
 Loop
 {
 Run, https://app.bombcrypto.io
