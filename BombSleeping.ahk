@@ -116,7 +116,7 @@ if ErrorLevel = 0
 Click, 1023,253
 Sleep, 1000
 Click, 979, 455
-Goto, LOOP1
+Return
 }
 Else
 {
