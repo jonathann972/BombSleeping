@@ -234,6 +234,8 @@ Loop, 1
 	FormatTime, mmss, %time%, HH:mm:ss
 	return mmss
 }
+SetTimer, VERIF, Off
+SetTimer, VERIF, Delete
 SetTimer, VERIF, 180000
 Run, https://app.bombcrypto.io
 Sleep, 1000
