@@ -116,7 +116,10 @@ if ErrorLevel = 0
 Click, 1023,253
 Sleep, 1000
 Click, 979, 455
-Return
+SetTimer, VERIF, Off
+SetTimer, VERIF, Delete
+SetTimer, VERIF, 180000
+Goto, LOOP1
 }
 Else
 {
