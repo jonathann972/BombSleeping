@@ -24,7 +24,7 @@ MsgBox, 4, Press Yes to download, Version actuelle : %Vnum%. Derniere version : 
 		if ErrorLevel = 1
 			MsgBox, There was some error updating the file. You may have the latest version, or it is blocked.
 		else if ErrorLevel = 0
-			MsgBox, Mise à jour Effectué. 
+			MsgBox, Mise à jour en cours, extraction en attente.. Patiente chabin. 
 		else 
 			MsgBox, some other crazy error occured. 
 	}
@@ -52,4 +52,4 @@ FileMoveDir, %A_ScriptDir%\update\BombSleeping-main\images, %A_ScriptDir%, 1
 FileRemoveDir, update, 1
 FileDelete, *.zip
 SLeep, 1500
-MsgBox, Script mis à jour !
+MsgBox, Script mis à jour ! Tu peux lancer chabine.
