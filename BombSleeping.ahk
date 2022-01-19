@@ -94,6 +94,12 @@ if ErrorLevel = 0
 {
 Goto, KICK
 }
+;CANNOT CONNECT TO THE SERVER
+ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\cannotconnect.PNG
+if ErrorLevel = 0
+{
+Goto, CANNOTCONNECT
+}
 ;wrong network
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\wrongnetwork.PNG
 if ErrorLevel = 0
@@ -105,7 +111,12 @@ Goto, PASSWORD1
 }
 
 
-
+;;;;;;;;;;;;;;;;;;;;
+CANNOTCONNECT:
+ToolTip, CANNOT CONNECT, X, Y
+Send, ^{F5}
+Sleep, 1500
+Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
 VERIF:
 Click, 958, 707
