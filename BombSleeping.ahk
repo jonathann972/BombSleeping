@@ -88,6 +88,12 @@ if ErrorLevel = 0
 {
 Goto, ALL
 }
+;1001 ERROR
+ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\1001.PNG
+if ErrorLevel = 0
+{
+Goto, 1001ERROR
+}
 ;KICK
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\KICK.PNG
 if ErrorLevel = 0
@@ -171,6 +177,12 @@ Goto, LOOP1
 HEROICON1:
 ToolTip, Hero work, X, Y
 Click, 1365,665
+Sleep, 1500
+Goto, LOOP1
+;;;;;;;;;;;;;;;;;;;;
+1001ERROR:
+ToolTip, 1008 ERROR, X, Y
+Send, ^{F5}
 Sleep, 1500
 Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
