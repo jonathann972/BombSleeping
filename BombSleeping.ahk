@@ -94,6 +94,12 @@ if ErrorLevel = 0
 {
 Goto, 1001ERROR
 }
+;USER NOT Log
+ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\usernotlog.PNG
+if ErrorLevel = 0
+{
+Goto, USERNOTLOGERROR
+}
 ;KICK
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\KICK.PNG
 if ErrorLevel = 0
@@ -116,7 +122,12 @@ Goto, PASSWORD1
 }
 }
 
-
+;;;;;;;;;;;;;;;;;;;;
+USERNOTLOGERROR:
+ToolTip, USERNOTLOG ERROR, X, Y
+Send, ^{F5}
+Sleep, 1500
+Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
 CANNOTCONNECT:
 ToolTip, CANNOT CONNECT, X, Y
