@@ -11,7 +11,7 @@ FileRead, password, %A_ScriptDir%\password.txt
 X := 478
 Y := 217
 Dodo := 5000
-TIME := 300000
+TIMEVERIF := 300000
 Loop
 {
 Run, https://app.bombcrypto.io
@@ -149,7 +149,7 @@ Sleep, 1000
 Click, 979, 455
 SetTimer, VERIF, Off
 SetTimer, VERIF, Delete
-SetTimer, VERIF, TIME
+SetTimer, VERIF, 300000
 Goto, LOOP1
 }
 Else
@@ -168,7 +168,7 @@ Sleep, 1000
 Click, 979, 455
 SetTimer, VERIF, Off
 SetTimer, VERIF, Delete
-SetTimer, VERIF, TIME
+SetTimer, VERIF, 300000
 Goto, LOOP1
 }
 Else
@@ -290,7 +290,7 @@ Loop, 1
 }
 SetTimer, VERIF, Off
 SetTimer, VERIF, Delete
-SetTimer, VERIF, TIME
+SetTimer, VERIF, 300000
 Run, https://app.bombcrypto.io
 Sleep, 1000
 WinActivate, Bombcrypto ahk_exe chrome.exe
