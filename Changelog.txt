@@ -1,1 +1,2 @@
 21/01/2022 - SetTimer augmenté à 10min au lieu de 3min.
+23/01/2022 - Ajout d'une seconde verification afk
