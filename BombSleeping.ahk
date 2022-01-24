@@ -139,6 +139,8 @@ Goto, LOOP1
 VERIF:
 Click, 958, 707
 Sleep, 1000
+Click, 955, 735
+Sleep, 1000
 Click, 958, 707
 Sleep, 2000 
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\allorange.PNG
@@ -146,7 +148,7 @@ if ErrorLevel = 0
 {
 Click, 1023,253
 Sleep, 1000
-Click, 979, 455
+Click, 952, 747
 SetTimer, VERIF, Off
 SetTimer, VERIF, Delete
 SetTimer, VERIF, 300000
@@ -165,7 +167,7 @@ if ErrorLevel = 0
 {
 Click, 1023,253
 Sleep, 1000
-Click, 979, 455
+Click, 952, 747
 SetTimer, VERIF, Off
 SetTimer, VERIF, Delete
 SetTimer, VERIF, 300000
