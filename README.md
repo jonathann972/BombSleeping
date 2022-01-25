@@ -19,6 +19,8 @@
 - Lancer Bombsleeping.ahk
 - Ne touchez à rien et Enjoy.
 
+- F1 pour fermer le programme
+
 # Support
 
 - Discord : NeuroWend#6033
