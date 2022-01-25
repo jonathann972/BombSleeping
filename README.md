@@ -13,6 +13,14 @@
 
 - Modifier le password.txt avec votre mot de passe Metamask (Afin que le bot puisse se connecter à chaque reboot)
 
+# Ajout du réseau BNB sur Metamask
+
+- Nom du réseau : Smart Chain 
+- Nouvelle URL de RPC : https://bsc-dataseed.binance.org/ 
+- ID de chaîne : 56 
+- Currency : BNB 
+- Block Explorer URL : https://bscscan.com.
+
 # Lancement
 - Verifier que votre Google chrome soit sur le bon écran ainsi qu'en agrandis.
 - Verifier bien que vos héros soient tous endormis (minimum 1) avant de lancer le programme.
