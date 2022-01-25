@@ -113,6 +113,12 @@ if ErrorLevel = 0
 {
 Goto, COMMONERROR
 }
+;COULD NOT VERIFY USER
+ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\couldnotverify.PNG
+if ErrorLevel = 0
+{
+Goto, COMMONERROR
+}
 ;wrong network
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\wrongnetwork.PNG
 if ErrorLevel = 0
