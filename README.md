@@ -2,7 +2,7 @@
  
  - https://www.autohotkey.com/download/
  - Chrome
- - Extension Metamask + (BNB / Bcoin)
+ - https://metamask.io/download/ + (BNB / Bcoin)
 
 # Configuration
 
