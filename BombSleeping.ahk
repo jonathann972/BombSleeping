@@ -45,19 +45,19 @@ Goto, CONNECT1
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\1008.PNG
 if ErrorLevel = 0
 {
-Goto, COMMONERROR
+Goto, 1008ERROR1
 }
 ;DATA CONFLICT
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\dataconflict.PNG
 if ErrorLevel = 0
 {
-Goto, COMMONERROR
+Goto, DATACONFLICT
 }
 ;CONNECTION ERROR
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\connectionerror.PNG
 if ErrorLevel = 0
 {
-Goto, COMMONERROR
+Goto, CONNECTIONERROR1
 }
 ;HERO ICON
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\hero-icon.PNG
@@ -69,19 +69,19 @@ Goto, HEROICON1
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\wrong.PNG
 if ErrorLevel = 0
 {
-Goto, COMMONERROR
+Goto, WRONG1
 }
 ;socket error
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\socket.PNG
 if ErrorLevel = 0
 {
-Goto, COMMONERROR
+Goto, SOCKETERROR1
 }
 ;10Min
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\10min.PNG
 if ErrorLevel = 0
 {
-Goto, COMMONERROR
+Goto, 10MIN
 }
 ;Send all hero
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\ALL.PNG
@@ -93,31 +93,25 @@ Goto, ALL
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\1001.PNG
 if ErrorLevel = 0
 {
-Goto, COMMONERROR
+Goto, 1001ERROR
 }
 ;USER NOT Log
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\usernotlog.PNG
 if ErrorLevel = 0
 {
-Goto, COMMONERROR
+Goto, USERNOTLOGERROR
 }
 ;KICK
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\KICK.PNG
 if ErrorLevel = 0
 {
-Goto, COMMONERROR
+Goto, KICK
 }
 ;CANNOT CONNECT TO THE SERVER
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\cannotconnect.PNG
 if ErrorLevel = 0
 {
-Goto, COMMONERROR
-}
-;COULD NOT VERIFY USER
-ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\couldnotverify.PNG
-if ErrorLevel = 0
-{
-Goto, COMMONERROR
+Goto, CANNOTCONNECT
 }
 ;wrong network
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\wrongnetwork.PNG
@@ -129,8 +123,18 @@ Goto, PASSWORD1
 }
 }
 
-
-
+;;;;;;;;;;;;;;;;;;;;
+USERNOTLOGERROR:
+ToolTip, USERNOTLOG ERROR, X, Y
+Send, ^{F5}
+Sleep, 1500
+Goto, LOOP1
+;;;;;;;;;;;;;;;;;;;;
+CANNOTCONNECT:
+ToolTip, CANNOT CONNECT, X, Y
+Send, ^{F5}
+Sleep, 1500
+Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
 VERIF:
 Click, 958, 707
@@ -189,6 +193,12 @@ Sleep, 1500
 Click, 954, 429
 Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
+10MIN:
+ToolTip, ERROR 10MIN, X, Y
+Send, ^{F5}
+Sleep, 1500
+Goto, LOOP1
+;;;;;;;;;;;;;;;;;;;;
 CONNECT1:
 ToolTip, Connect Wallet, X, Y
 Click, 954,611 ;connect wallet
@@ -203,8 +213,44 @@ Click, 1365,665
 Sleep, 1500
 Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
-COMMONERROR:
+1001ERROR:
 ToolTip, 1008 ERROR, X, Y
+Send, ^{F5}
+Sleep, 1500
+Goto, LOOP1
+;;;;;;;;;;;;;;;;;;;;
+1008ERROR1:
+ToolTip, 1008 ERROR, X, Y
+Send, ^{F5}
+Sleep, 1500
+Goto, LOOP1
+;;;;;;;;;;;;;;;;;;;;
+CONNECTIONERROR1:
+ToolTip, CONNECTION ERROR, X, Y
+Send, ^{F5}
+Sleep, 1500
+Goto, LOOP1
+;;;;;;;;;;;;;;;;;;;;
+DATACONFLICT:
+ToolTip, DATA CONFLICT, X, Y
+Send, ^{F5}
+Sleep, 1500
+Goto, LOOP1
+;;;;;;;;;;;;;;;;;;;;
+KICK:
+ToolTip, KICK, X, Y
+Send, ^{F5}
+Sleep, 1500
+Goto, LOOP1
+;;;;;;;;;;;;;;;;;;;;
+WRONG1:
+ToolTip, WRONG ERROR, X, Y
+Send, ^{F5}
+Sleep, 1500
+Goto, LOOP1
+;;;;;;;;;;;;;;;;;;;;
+SOCKETERROR1:
+ToolTip, SOCKET ERROR, X, Y
 Send, ^{F5}
 Sleep, 1500
 Goto, LOOP1
