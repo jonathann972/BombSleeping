@@ -4,6 +4,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #Persistent
 #SingleInstance, force
+SetTimer, VERIF, -1200000
 BOOT:
 password =
 FileRead, password, %A_ScriptDir%\password.txt
@@ -12,6 +13,7 @@ Y := 217
 Dodo := 5000
 Loop
 {
+
 Run, https://app.bombcrypto.io
 Sleep, 1000
 WinActivate, Bombcrypto ahk_exe chrome.exe
@@ -119,8 +121,11 @@ if ErrorLevel = 0
 Goto, CANNOTCONNECT
 }
 
-
-
+;;;;;;;;;;;;;;;;;;;;
+VERIF:
+SetTimer, VERIF, Off
+SetTimer, VERIF, Delete
+Goto, REBOOT
 ;;;;;;;;;;;;;;;;;;;;
 ALL:
 ToolTip, ALL, X, Y
@@ -243,7 +248,11 @@ Loop, 1
 	FormatTime, mmss, %time%, HH:mm:ss
 	return mmss
 }
-Goto, BOOT
+SetTimer, VERIF, 300000
+Run, https://app.bombcrypto.io
+Sleep, 1000
+WinActivate, Bombcrypto ahk_exe chrome.exe
+Goto, LOOP1
 }
 
 
