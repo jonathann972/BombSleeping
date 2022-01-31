@@ -100,27 +100,27 @@ Sleep, 6000
 Goto, PASSWORD1
 }
 }
-
-
-
-;;;;;;;;;;;;;;;;;;;;
-VERIF:
-Click, 958, 707
-Sleep, 1000
-Click, 958, 707
-Sleep, 2000 
-ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\allorange.PNG
+;1001 ERROR
+ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\1001.PNG
 if ErrorLevel = 0
 {
-Click, 1023,253
-Sleep, 1000
-Click, 979, 455
-Goto, LOOP1
+Goto, 1001ERROR
 }
-Else
+;USER NOT Log
+ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\usernotlog.PNG
+if ErrorLevel = 0
 {
-Goto, REBOOT
+Goto, USERNOTLOGERROR
 }
+;CANNOT CONNECT TO THE SERVER
+ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\cannotconnect.PNG
+if ErrorLevel = 0
+{
+Goto, CANNOTCONNECT
+}
+
+
+
 ;;;;;;;;;;;;;;;;;;;;
 ALL:
 ToolTip, ALL, X, Y
@@ -202,7 +202,24 @@ Sleep, 1500
 Send, ^{F5}
 Sleep, 2500
 Goto, LOOP1
-
+;;;;;;;;;;;;;;;;;;;;
+1001ERROR:
+ToolTip, 1008 ERROR, X, Y
+Send, ^{F5}
+Sleep, 1500
+Goto, LOOP1
+;;;;;;;;;;;;;;;;;;;;
+USERNOTLOGERROR:
+ToolTip, USERNOTLOG ERROR, X, Y
+Send, ^{F5}
+Sleep, 1500
+Goto, LOOP1
+;;;;;;;;;;;;;;;;;;;;
+CANNOTCONNECT:
+ToolTip, CANNOT CONNECT, X, Y
+Send, ^{F5}
+Sleep, 1500
+Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
 
 REBOOT:
