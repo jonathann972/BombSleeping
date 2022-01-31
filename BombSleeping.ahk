@@ -4,14 +4,12 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #Persistent
 #SingleInstance, force
-SetTimer, VERIF, -600000
 BOOT:
 password =
 FileRead, password, %A_ScriptDir%\password.txt
 X := 478
 Y := 217
 Dodo := 5000
-TIMEVERIF := 300000
 Loop
 {
 Run, https://app.bombcrypto.io
@@ -31,8 +29,6 @@ Click, 955,621
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\AFK.PNG
 if ErrorLevel = 0
 {
-SetTimer, VERIF, Off
-SetTimer, VERIF, Delete
 Goto, REBOOT
 }
 ;CONNECT WALLET
@@ -89,29 +85,11 @@ if ErrorLevel = 0
 {
 Goto, ALL
 }
-;1001 ERROR
-ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\1001.PNG
-if ErrorLevel = 0
-{
-Goto, 1001ERROR
-}
-;USER NOT Log
-ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\usernotlog.PNG
-if ErrorLevel = 0
-{
-Goto, USERNOTLOGERROR
-}
 ;KICK
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\KICK.PNG
 if ErrorLevel = 0
 {
 Goto, KICK
-}
-;CANNOT CONNECT TO THE SERVER
-ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\cannotconnect.PNG
-if ErrorLevel = 0
-{
-Goto, CANNOTCONNECT
 }
 ;wrong network
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\wrongnetwork.PNG
@@ -123,23 +101,11 @@ Goto, PASSWORD1
 }
 }
 
-;;;;;;;;;;;;;;;;;;;;
-USERNOTLOGERROR:
-ToolTip, USERNOTLOG ERROR, X, Y
-Send, ^{F5}
-Sleep, 1500
-Goto, LOOP1
-;;;;;;;;;;;;;;;;;;;;
-CANNOTCONNECT:
-ToolTip, CANNOT CONNECT, X, Y
-Send, ^{F5}
-Sleep, 1500
-Goto, LOOP1
+
+
 ;;;;;;;;;;;;;;;;;;;;
 VERIF:
 Click, 958, 707
-Sleep, 1000
-Click, 955, 735
 Sleep, 1000
 Click, 958, 707
 Sleep, 2000 
@@ -148,35 +114,11 @@ if ErrorLevel = 0
 {
 Click, 1023,253
 Sleep, 1000
-Click, 952, 747
-SetTimer, VERIF, Off
-SetTimer, VERIF, Delete
-SetTimer, VERIF, 300000
+Click, 979, 455
 Goto, LOOP1
 }
 Else
 {
-SetTimer, VERIF, Off
-SetTimer, VERIF, Delete
-Goto, ALLEM
-}
-;;;;;;;;;;;;;;;;;;;;
-ALLEM:
-ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\allem.PNG
-if ErrorLevel = 0
-{
-Click, 1023,253
-Sleep, 1000
-Click, 952, 747
-SetTimer, VERIF, Off
-SetTimer, VERIF, Delete
-SetTimer, VERIF, 300000
-Goto, LOOP1
-}
-Else
-{
-SetTimer, VERIF, Off
-SetTimer, VERIF, Delete
 Goto, REBOOT
 }
 ;;;;;;;;;;;;;;;;;;;;
@@ -210,12 +152,6 @@ Goto, LOOP1
 HEROICON1:
 ToolTip, Hero work, X, Y
 Click, 1365,665
-Sleep, 1500
-Goto, LOOP1
-;;;;;;;;;;;;;;;;;;;;
-1001ERROR:
-ToolTip, 1008 ERROR, X, Y
-Send, ^{F5}
 Sleep, 1500
 Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
@@ -290,13 +226,7 @@ Loop, 1
 	FormatTime, mmss, %time%, HH:mm:ss
 	return mmss
 }
-SetTimer, VERIF, Off
-SetTimer, VERIF, Delete
-SetTimer, VERIF, 300000
-Run, https://app.bombcrypto.io
-Sleep, 1000
-WinActivate, Bombcrypto ahk_exe chrome.exe
-Goto, LOOP1
+Goto, BOOT
 }
 
 
