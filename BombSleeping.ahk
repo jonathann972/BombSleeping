@@ -248,7 +248,7 @@ Loop, 1
 	FormatTime, mmss, %time%, HH:mm:ss
 	return mmss
 }
-SetTimer, VERIF, 300000
+SetTimer, VERIF, 1200000
 Run, https://app.bombcrypto.io
 Sleep, 1000
 WinActivate, Bombcrypto ahk_exe chrome.exe
