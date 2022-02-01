@@ -4,7 +4,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #Persistent
 #SingleInstance, force
-SetTimer, VERIF, -1200000
+SetTimer, VERIF, -2000000
 BOOT:
 password =
 FileRead, password, %A_ScriptDir%\password.txt
@@ -248,7 +248,7 @@ Loop, 1
 	FormatTime, mmss, %time%, HH:mm:ss
 	return mmss
 }
-SetTimer, VERIF, 1200000
+SetTimer, VERIF, 2000000
 Run, https://app.bombcrypto.io
 Sleep, 1000
 WinActivate, Bombcrypto ahk_exe chrome.exe
