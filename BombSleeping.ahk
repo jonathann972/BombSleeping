@@ -120,7 +120,18 @@ if ErrorLevel = 0
 {
 Goto, CANNOTCONNECT
 }
+;SERVER MAINTENANCE
+ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\servermaintenance.PNG
+if ErrorLevel = 0
+{
+Goto, maintenance
+}
 
+;;;;;;;;;;;;;;;;;;;;
+maintenance:
+Send, ^{F5}
+Sleep, 1500
+Goto, LOOP1
 ;;;;;;;;;;;;;;;;;;;;
 VERIF:
 SetTimer, VERIF, Off
