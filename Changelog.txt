@@ -2,3 +2,4 @@
 23/01/2022 - Ajout d'une seconde verification afk
 25/01/2022 - Clean script
 31/01/2022 - Passage sur une version antérieur pour corriger certain probleme.
+03/02/2022 - Image maintenance ajouté
