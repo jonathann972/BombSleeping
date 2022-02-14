@@ -27,6 +27,15 @@ if ErrorLevel = 0
 {
 Click, 955,621
 }
+
+;TERM AND CONDITION
+ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\ACCEPT.PNG
+if ErrorLevel = 0
+{
+Click, 725,546
+Sleep, 3000
+Click, 955,629
+}
 ;AFK MESSAGE
 ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %A_ScriptDir%\images\AFK.PNG
 if ErrorLevel = 0
