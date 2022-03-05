@@ -17,6 +17,10 @@ Loop
 Run, https://app.bombcrypto.io
 Sleep, 1000
 WinActivate, Bombcrypto ahk_exe chrome.exe
+Sleep, 3000
+Click, 1802,54
+Sleep, 6000
+Goto, PASSWORD1
 LOOP1:
 Loop
 {
@@ -172,9 +176,6 @@ Click, 954,611 ;connect wallet
 Sleep, 1500
 Click, 964,548
 Sleep, 1500
-Click, 1802,54
-Sleep, 6000
-Goto, PASSWORD1
 Sleep, 10000
 Click, 253,556
 Sleep, 4000
