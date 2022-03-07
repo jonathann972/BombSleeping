@@ -19,7 +19,7 @@ Sleep, 1000
 WinActivate, Bombcrypto ahk_exe chrome.exe
 Sleep, 3000
 Click, 1802,54
-Sleep, 6000
+Sleep, 10000
 Goto, PASSWORD1
 LOOP1:
 Loop
