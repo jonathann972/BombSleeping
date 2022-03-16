@@ -174,7 +174,7 @@ CONNECT1:
 ToolTip, Connect Wallet, X, Y
 Click, 954,656 ;connect wallet
 Sleep, 1500
-Click, 969,5979
+Click, 969,579
 Sleep, 1500
 Sleep, 10000
 Click, 253,556
