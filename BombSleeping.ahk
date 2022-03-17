@@ -153,7 +153,7 @@ Goto, REBOOT
 ;;;;;;;;;;;;;;;;;;;;
 ALL:
 ToolTip, ALL, X, Y
-Click, 871, 332
+Click, 870, 339
 Sleep, 2000
 Click, 870,321
 Sleep, 2000
